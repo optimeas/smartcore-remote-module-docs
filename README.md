@@ -9,28 +9,27 @@ In this repository you will find documentation on the API of the module, as well
 - If you are working on Windows, make sure that scripts only contain `\n`, not `\r\n`
 
 # Table of Contents
-- optiMEAS Remote Plugin Module](#optimeas-remote-plugin-module)
-- Table of Contents](#table-of-contents)
-- Tutorials](#tutorials)
-- JSON configuration](#json-configuration)
+- [optiMEAS Remote Plugin Module](#optimeas-remote-plugin-module)
+- [Table of Contents](#table-of-contents)
+- [Tutorials](#tutorials)
+- [JSON configuration](#json-configuration)
   - [Configuration of network parameters](#configuration-of-network-parameters)
   - [Configuration of the process control](#configuration-of-process-control)
   - [Configuration of the producer channels](producerChannels )](#configuration-of-producer-channels--producerchannels-)
   - [Configuration of the consumer channels (consumerChannels )](#configuration-of-the-consumer-channels--consumerchannels-)
-  - Example configuration](#exampleconfiguration)
-- API/Protocol](#apiprotocol)
-  - Header](#header)
-    - Header metadata](#header-metadata)
-    - Commands](#commands)
-  - Payload structure (JSON content)](#payload-structure-json-content)
-    - byName Commands](#byname-commands)
-      - Write values to smartCORE](#werte-in-smartcore-schreiben)
-      - Read values from smartCORE (polling)](#values-read-from-smartcore-polling)
-    - byIndex Commands](#byindex-commands)
-      - Query channel list](#kanalliste-abfragen)
-      - Write values to smartCORE](#values-in-smartcore-write-1)
-      - Read continuous values from smartCORE](#continuous-values-read-from-smartcore)
-
+  - [Example configuration](#exampleconfiguration)
+- [API/Protocol](#apiprotocol)
+  - [Header](#header)
+    - [Header metadata](#header-metadata)
+    - [Commands](#commands)
+  - [Payload structure (JSON content)](#payload-structure-json-content)
+    - [byName Commands](#byname-commands)
+      - [Write values to smartCORE](#werte-in-smartcore-schreiben)
+      - [Read values from smartCORE (polling)](#values-read-from-smartcore-polling)
+    - [byIndex Commands](#byindex-commands)
+      - [Query channel list](#kanalliste-abfragen)
+      - [Write values to smartCORE](#values-in-smartcore-write-1)
+      - [Read continuous values from smartCORE](#continuous-values-read-from-smartcore)
 
 # Tutorials
 [Development on external PC](./examples/remote%20test/)  
@@ -207,7 +206,7 @@ RPC: ReadSamplesByNameResponse (smartCORE => Client)
 
 ```JSON
 {
-  “c": [
+  "c": [
     {
       "n": "sen5x_pm1p0",
       "v": 1.0099999904632568,
