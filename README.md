@@ -8,7 +8,6 @@ In this repository you will find documentation on the API of the module, as well
 **Notes on script development:**
 - If you are working on Windows, make sure that scripts only contain `\n`, not `\r\n`
 
-
 # Table of Contents
 - optiMEAS Remote Plugin Module](#optimeas-remote-plugin-module)
 - Table of Contents](#table-of-contents)
@@ -16,7 +15,7 @@ In this repository you will find documentation on the API of the module, as well
 - JSON configuration](#json-configuration)
   - [Configuration of network parameters](#configuration-of-network-parameters)
   - [Configuration of the process control](#configuration-of-process-control)
-  - Configuration of the producer channels (producerChannels )](#configuration-of-producer-channels--producerchannels-)
+  - [Configuration of the producer channels](producerChannels )](#configuration-of-producer-channels--producerchannels-)
   - [Configuration of the consumer channels (consumerChannels )](#configuration-of-the-consumer-channels--consumerchannels-)
   - Example configuration](#exampleconfiguration)
 - API/Protocol](#apiprotocol)
@@ -215,7 +214,7 @@ RPC: ReadSamplesByNameResponse (smartCORE => Client)
       "t": 1720074467000000
     },
     {
-      "n": ‘sen5x_pm2p5’,
+      "n": "sen5x_pm2p5",
       "v": 2.009999990463257,
       "t": 1720074467000000
     }
@@ -266,7 +265,7 @@ RPC: ChannelListResponse (smartCORE => Client)
       "n": "sen5x_pm1p0",
       "i": 0,
       "w": true,
-      "d": ”float"
+      "d": "float"
     },
     {
       "n": "sen5x_pm2p5",
@@ -433,29 +432,29 @@ Payload variant 1: with time stamp ( e = “false”)
 
 ```JSON
 {
-  “x": 123,
-  “c": [
+  "x": 123,
+  "c": [
     {
-      “i": 2,
-      “v": [
+      "i": 2,
+      "v": [
         1.0099999904632568,
         5.009999990463257,
         6.009999990463257
       ],
-      “t": [
+      "t": [
         1720074467000000,
         1720074467000100,
         1720074467000200
       ]
     },
     {
-      “i": 5,
-      “v": [
+      "i": 5,
+      "v": [
         1.0099999904632568,
         5.009999990463257,
         6.009999990463257
       ],
-      “t": [
+      "t": [
         1720074467000000,
         1720074467000100,
         1720074467000200
@@ -469,21 +468,21 @@ Payload variant 2: without time stamp ( e = “true”)
 
 ```JSON
 {
-  “x": 123,
-  “t": 1720074467000000,
-  “s": 100,
-  “c": [
+  "x": 123,
+  "t": 1720074467000000,
+  "s": 100,
+  "c": [
     {
-      “i": 2,
-      “v": [
+      "i": 2,
+      "v": [
         1.0099999904632568,
         5.0099999904632568,
         6.0099999904632568
       ]
     },
     {
-      “i": 5,
-      “v": [
+      "i": 5,
+      "v": [
         1.0099999904632568,
         5.0099999904632568,
         6.0099999904632568
@@ -509,26 +508,26 @@ RPC: AlarmMessageRequest (Client => smartCORE)
 
 ```JSON
 {
-  “token": ‘xyz’,
-  “uuid": ‘9643’,
-  “time": 1720074467000000,
-  “action": ‘event’,
-  “context": ‘component_x’,
-  “message": ‘condition_y’,
-  “level": ‘info’,
-  “metadata": {
-    “hello": ”world”
+  "token": "xyz",
+  "uuid": "9643",
+  "time": 1720074467000000,
+  "action": "event",
+  "context": "component_x",
+  "message": "condition_y",
+  "level": "info",
+  "metadata": {
+    "hello": "world"
   },
   “snapshot": [
     {
-      “n": ‘name’,
-      “v": ‘value’,
-      “u": ”unit”
+      "n": "name",
+      "v": "value",
+      "u": "unit"
     },
     {
-      “n": ‘name’,
-      “v": ‘value’,
-      “u": ”unit”
+      "n": "name",
+      "v": "value",
+      "u": ”unit"
     }
   ]
 }
@@ -543,8 +542,8 @@ RPC: AlarmMessageResponse (smartCORE => Client)
 
 ```JSON
 {
-  “token": ‘xyz’,
-  “uuid": ”9643”
+  "token": "xyz",
+  "uuid": "9643"
 }
 ```
 
