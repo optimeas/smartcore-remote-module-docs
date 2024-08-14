@@ -8,6 +8,7 @@ In this repository you will find documentation on the API of the module, as well
 **Notes on script development:**
 
 - If you are working on Windows, make sure that scripts only contain `\n`, not `\r\n`
+- The script must contain the shebang line `#!/usr/bin/env python3` at the beginning so that the script can be executed like a normal application on the device!
 
 # Table of Contents
 
@@ -15,10 +16,10 @@ In this repository you will find documentation on the API of the module, as well
 - [Table of Contents](#table-of-contents)
 - [Tutorials](#tutorials)
 - [JSON configuration](#json-configuration)
-  - [Configuration of network parameters](#configuration-of-network-parameters)
-  - [Configuration of the process control](#configuration-of-process-control)
-  - [Configuration of the producer channels (producerChannels )](#configuration-of-producer-channels--producerchannels-)
-  - [Configuration of the consumer channels (consumerChannels )](#configuration-of-the-consumer-channels--consumerchannels-)
+  - [Configuration of network parameters](#configuration-of-the-network-parameters)
+  - [Configuration of the process control](#configuration-of-the-process-control)
+  - [Configuration of the producer channels (producerChannels)](#configuration-of-the-producer-channels)
+  - [Configuration of the consumer channels (consumerChannels)](#configuration-of-the-consumer-channels)
   - [Example configuration](#exampleconfiguration)
 - [API/Protocol](#apiprotocol)
   - [Header](#header)
@@ -60,7 +61,7 @@ In this repository you will find documentation on the API of the module, as well
 | command | Name (with optional path) of the process |
 | arguments | Command line arguments for the process |
 
-## Configuration of the producer channels ( producerChannels )
+## Configuration of the producer channels
 
 | keyword | explanation |
 | ------------- | ------------------- |
@@ -68,7 +69,7 @@ In this repository you will find documentation on the API of the module, as well
 | dataType | Data type of the channel |
 | physicalUnit | Unit of the channel |
 
-## Configuration of the consumer channel ( consumerChannels )
+## Configuration of the consumer channels
 
 | keyword | explanation |
 | ------------- | ------------------------------------------- |
