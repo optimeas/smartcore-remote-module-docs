@@ -15,7 +15,7 @@ In this repository you will find documentation on the API of the module, as well
 - [JSON configuration](#json-configuration)
   - [Configuration of network parameters](#configuration-of-network-parameters)
   - [Configuration of the process control](#configuration-of-process-control)
-  - [Configuration of the producer channels (producerChannels )](#configuration-of-producer-channels--producerchannels-)
+  - [Configuration of the producer channels (producerChannels )](#configuration-of-producer-channels--producerchannels-)
   - [Configuration of the consumer channels (consumerChannels )](#configuration-of-the-consumer-channels--consumerchannels-)
   - [Example configuration](#exampleconfiguration)
 - [API/Protocol](#apiprotocol)
