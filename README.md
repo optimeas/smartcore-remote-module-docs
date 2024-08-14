@@ -78,41 +78,39 @@ In this repository you will find documentation on the API of the module, as well
 ## Example configuration
 
 ```JSON
-{
-      "module": "remote",
-      "factory": "remote",
-      "config": {
-        "port": 61616,
-        "localhost": true,
-        "process":
+  {
+    "module": "remote",
+    "factory": "remote",
+    "config": {
+      "port": 61616,
+      "localhost": true,
+      "process": {
+        "enable": true,
+        "logOutput": false,
+        "watchdogTimeout": 60,
+        "disableKillAllProcesses": false,
+        "command": "i2c-sen5x-cpp",
+        "arguments": "--device-path=/dev/i2c-1 --interval=1"
+      },
+      "producerChannels": [
         {
-            "enable": true,
-            "logOutput": false,
-            "watchdogTimeout": 60, 
-            "disableKillAllProcesses": false,
-            "command": "i2c-sen5x-cpp",
-            "arguments": "--device-path=/dev/i2c-1 --interval=1"
+          "name": "sen5x_pm1p0",
+          "dataType": "float",
+          "physicalUnit": "µg/m³"
         },
-        "producerChannels": [
-          {
-            "name": "sen5x_pm1p0",
-            "dataType": "float",
-            "physicalUnit": "µg/m³"
-          },
-          {
-            "name": "sen5x_pm2p5",
-            "dataType": "float",
-            "physicalUnit": "µg/m³"
-          }
-        ],
-        "consumerChannels": [
-            {
-                "name": "scd40_co2"
-            }
-        ]
-      }
+        {
+          "name": "sen5x_pm2p5",
+          "dataType": "float",
+          "physicalUnit": "µg/m³"
+        }
+      ],
+      "consumerChannels": [
+        {
+          "name": "scd40_co2"
+        }
+      ]
     }
-
+  }
 ```
 
 # API/Protocol
