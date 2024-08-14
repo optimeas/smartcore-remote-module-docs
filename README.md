@@ -1,14 +1,16 @@
 # optiMEAS Remote Plugin Module
 
 The remote plugin module is used for the simple connection of scripts / programs to the smartCORE. It provides an IPC interface that allows customers to communicate with the smartCORE from software they have written themselves. It can also start, stop and monitor this software.  
-Without an external plugin, the module has **no** function. 
+Without an external plugin, the module has **no** function.
 
 In this repository you will find documentation on the API of the module, as well as a few examples that should make it easy to get started with development.
 
 **Notes on script development:**
+
 - If you are working on Windows, make sure that scripts only contain `\n`, not `\r\n`
 
 # Table of Contents
+
 - [optiMEAS Remote Plugin Module](#optimeas-remote-plugin-module)
 - [Table of Contents](#table-of-contents)
 - [Tutorials](#tutorials)
@@ -36,18 +38,19 @@ In this repository you will find documentation on the API of the module, as well
 - [Development on external PC](./examples/remote%20test/)
 - [Simple data-write plugin](./examples/funcgen/)
 - [Data read and write plugin](./examples/wattage_calc/)
-
-<!-- [[Advanced] Installation of new Python libraries (e.g. NumPy)](./examples/numpy/) -->
+<!-- [[Advanced] - Installation of new Python libraries (e.g. NumPy)](./examples/numpy/) -->
 
 # JSON configuration
 
 ## Configuration of the network parameters
+
 | keyword | explanation |
 | ------------- | --------------------------------------------------------------- |
 | port | UDP port on which the plugin is listening (default: 61616) |
 | localhost | Restriction to “localhost only” communication (default: true) |
 
 ## Configuration of the process control
+
 | Name | Explanation |
 | ----------------------- | ---------------------------------------------------------------------------------------- |
 | enable | Specifies whether the process should be started and monitored (default: false) |
@@ -57,22 +60,22 @@ In this repository you will find documentation on the API of the module, as well
 | command | Name (with optional path) of the process |
 | arguments | Command line arguments for the process |
 
-
 ## Configuration of the producer channels ( producerChannels )
+
 | keyword | explanation |
 | ------------- | ------------------- |
 | name | Name of the channel |
 | dataType | Data type of the channel |
 | physicalUnit | Unit of the channel |
 
-
 ## Configuration of the consumer channel ( consumerChannels )
+
 | keyword | explanation |
 | ------------- | ------------------------------------------- |
 | name | Name of the channel to be read |
 
-
 ## Example configuration
+
 ```JSON
 {
       "module": "remote",
@@ -111,14 +114,14 @@ In this repository you will find documentation on the API of the module, as well
 
 ```
 
-
-
 # API/Protocol
+
 The protocol consists of a mostly static header, in which a command code is specified, and (if necessary) a JSON payload.
 
 ## Header
 
 ### Header metadata
+
 | Offset and data type | Name | Description |
 | ------------------- | --------------- | ------------------------------------------------------------------------------------------- |
 | [0] uint32_t | magicToken | Recognition of the protocol (fixed 0x45554C42) |
@@ -131,6 +134,7 @@ The protocol consists of a mostly static header, in which a command code is spec
 | [26] uint16_t | command | Number of the RPC call (see following table) |
 
 ### Commands
+
 | Command No | Name | Explanation |
 | ---------- | ------------------------- | ----------------------------------------------------------------------------------------- |
 | 0 | LifeSignRequest | smartCORE status request |
@@ -223,8 +227,8 @@ RPC: ReadSamplesByNameResponse (smartCORE => Client)
 }
 ```
 
-
 ### byIndex Commands
+
 #### Query channel list
 
 RPC: ChannelListRequest (Client => smartCORE)
@@ -496,7 +500,6 @@ Payload variant 2: without time stamp ( e = “true”)
 RPC: ReadSamplesEnd (Client => smartCORE)
 
 Empty request to switch off the transmission.
-
 
 <!-- ### Alarms (TBD)
 Create alarm in smartCORE
