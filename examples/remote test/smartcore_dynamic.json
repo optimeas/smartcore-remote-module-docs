@@ -1,0 +1,19 @@
+{
+    "plugins": [
+    "remote"
+    ],
+    "modules": [
+        {
+            "factory": "remote",
+            "module": "remote",
+            "config": {
+                "port": 61616,
+                "localhost": false,
+                "producerChannels": [{
+                    "name": "hello_world",
+                    "dataType": "bool"
+                }]
+            }
+        }
+    ]
+}

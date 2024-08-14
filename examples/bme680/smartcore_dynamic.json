@@ -1,0 +1,20 @@
+{
+    "plugins": [
+    "remote"
+    ],
+    "modules": [
+        {
+            "factory": "remote",
+            "module": "remote",
+            "config": {
+                "port": 61616,
+                "producerChannels": [
+                    {
+                        "name": "BME680.Temp",
+                        "dataType": "float"
+                    }
+                ]
+            }
+        }
+    ]
+}

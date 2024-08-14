@@ -1,0 +1,54 @@
+{
+    "plugins": [
+    "remote"
+    ],
+    "modules": [
+        {
+            "factory": "remote",
+            "module": "remote",
+            "config": {
+                "port": 61616,
+                "localhost": false,
+                "producerChannels": [
+                    {
+                        "name": "remote.Wattage",
+                        "dataType": "float",
+                        "physicalUnit": "W"
+                    }
+                ],
+                "consumerChannels": [
+                    {
+                        "name": "remote.Voltage"
+                    },
+                    {
+                        "name": "remote.Amperage"
+                    }
+                ]
+            }
+        },
+        {
+            "factory": "functiongenerator",
+            "module": "Functiongenerator",
+            "config": {
+                "channels": [{
+                    "name": "remote.Voltage",
+                    "dataType": "float",
+                    "amplitude": 1.5,
+                    "offset": 240,
+                    "frequency": 0.05,
+                    "function": "sine",
+                    "physicalUnit": "V"
+                },
+                {
+                    "name": "remote.Amperage",
+                    "dataType": "float",
+                    "function": "triangle",
+                    "amplitude": 10,
+                    "frequency": 0.5,
+                    "physicalUnit": "A"
+                }
+            ]
+            }
+        }
+    ]
+}

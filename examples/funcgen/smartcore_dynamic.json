@@ -1,0 +1,28 @@
+{
+    "plugins": [
+    "remote"
+    ],
+    "modules": [
+        {
+            "factory": "remote",
+            "module": "remote",
+            "config": {
+                "port": 61616,
+                "localhost": false,
+                "producerChannels": [{
+                    "name": "remote.test.sine",
+                    "dataType": "float"
+                },
+                {
+                    "name": "remote.test.square",
+                    "dataType": "float"
+                },
+                {
+                    "name": "remote.test.sharktooth",
+                    "dataType": "float"
+                }
+            ]
+            }
+        }
+    ]
+}
