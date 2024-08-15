@@ -1,4 +1,4 @@
-# optiMEAS Remote Plugin Module
+# smartCore Remote Plugin Module
 
 The "optiMEAS Remote Plugin Module" is a highly flexible tool for connecting external applications to the smartCORE system, leveraging modern communication protocols and technologies. It uses the UDP (User Datagram Protocol) for communication, known for its low latency and efficiency, particularly in real-time applications. The module employs the MsgPack format for efficient serialization and deserialization of data, allowing for compact and fast data transfer. Communication with the smartCORE system is achieved via IPC (Inter-Process Communication), with configurable producer and consumer channels tailored to specific needs. This enables real-time integration and control of external software, supporting the flexible expansion of existing systems. The documentation provides detailed examples to facilitate the development of custom plugins, making it easy to meet specific requirements. By utilizing these technologies, the module offers a robust and scalable solution for communication between smartCORE and external processes, making it ideal for applications in demanding industrial environments.
 
@@ -11,7 +11,7 @@ In this repository you will find documentation on the API of the module, as well
 
 # Table of Contents
 
-- [optiMEAS Remote Plugin Module](#optimeas-remote-plugin-module)
+- [smartCore Remote Plugin Module](#optimeas-remote-plugin-module)
 - [Table of Contents](#table-of-contents)
 - [Tutorials](#tutorials)
 - [JSON configuration](#json-configuration)
