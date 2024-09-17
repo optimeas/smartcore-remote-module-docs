@@ -1,0 +1,88 @@
+{
+    "plugins": [       
+        "functiongenerator",       
+        "remote"       
+    ],
+    "timeout": 10000,
+    "modules": [
+
+        {
+            "config": {
+                "channels": [
+                    {
+                        "amplitude": 2,
+                        "dataType": "int32",
+                        "function": "linear",
+                        "name": "FuncGen.Linear",
+                        "offset": -2
+                    },
+                    {
+                        "amplitude": 2,
+                        "dataType": "double",
+                        "frequency": 0.05,
+                        "function": "sine",
+                        "name": "FuncGen.Sinus",
+                        "offset": 1,
+                        "physicalDimension": "",
+                        "physicalUnit": ""
+                    },
+                    {
+                        "amplitude": 2,
+                        "dataType": "float",
+                        "frequency": 0.05,
+                        "function": "sawtooth",
+                        "name": "FuncGen.Sawtooth",
+                        "offset": 1,
+                        "physicalUnit": ""
+                    },
+                    {
+                        "amplitude": 2,
+                        "dataType": "int32",
+                        "frequency": 0.05,
+                        "function": "rectangle",
+                        "name": "FuncGen.RectangleOffOn",
+                        "offset": 1,
+                        "onOffRatio": -0.6
+                    }
+                ],
+                "maximumProductionCount": -1,
+                "maximumTimestampDeviation": 1000000,
+                "samplesPerBlock": 1,
+                "startDate": "now",
+                "timeoutNanoseconds": 1000000,
+                "timeoutSeconds": 0
+            },
+            "module": "Functiongenerator",
+            "factory": "functiongenerator"
+        },        
+                
+        {
+            "config": {
+                "port": 61617,
+                "localhost": false,
+                "comment": "",
+                "process": {
+                    "enable": false,
+                    "logOutput": false,
+                    "watchdogTimeout": 0,
+                    "disableKillAllProcesses": false,
+                    "command": "",
+                    "arguments": ""
+                },
+                "consumerChannels": [
+                    {
+                        "name": "FuncGen.Sawtooth"
+                    },
+                    {
+                        "name": "FuncGen.Sinus"
+                    },
+                    {
+                        "name": "FuncGen.RectangleOffOn"
+                    }
+                ]
+            },
+            "module": "Remote_Calc",
+            "factory": "remote"
+        }       
+    ]
+}
